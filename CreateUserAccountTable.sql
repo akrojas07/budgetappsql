@@ -4,8 +4,8 @@ Create table userAccount
 	Email varchar(255) not null,
 	FirstName varchar(255) not null,
 	LastName varchar(255) not null,
-	"Password" varchar(255) not null,
-	"Status" bit not null,
+	[Password] varchar(255) not null,
+	[Status] bit not null,
 	Created datetime,
 	Updated datetime
 );
