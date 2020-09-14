@@ -5,7 +5,7 @@ Create table userAccount
 	FirstName varchar(255) not null,
 	LastName varchar(255) not null,
 	[Password] varchar(255) not null,
-	[Status] bit not null,
+	[Status] bit not null default '0',
 	Created datetime,
 	Updated datetime
 );
