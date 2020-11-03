@@ -25,7 +25,8 @@ BEGIN
     when matched then
     update
         set [target].SavingsAmount = src.Amount,
-            [target].SavingsType = src.[Type]
+            [target].SavingsType = src.[Type],
+			[target].UpdatedDate = sysdatetime()
 
 	--When no records are matched, insert the incoming records from source table to target table
 	when not matched by target then
@@ -47,7 +48,7 @@ BEGIN
 		)
 
 	--When there is a row that exists in target and same record does not exist in source then delete this record target
-	when not matched by source then
+	when not matched by source and [target].UserId in (select s.UserId from @Savings s) then
 		delete;
 END
 GO
