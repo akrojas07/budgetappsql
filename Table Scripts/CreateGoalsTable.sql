@@ -7,6 +7,7 @@ create table dbo.goals
 	startDate datetime,
 	endDate dateTime,
 	amount decimal,
+	targetAmount,
 	CreatedDate DateTime,
 	UpdatedDate DateTime
 );
